@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login Form</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f4f4f4;
+  }
+  .login-container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+</style>
+</head>
+<body>
+<div class="login-container">
+  <h2>Login</h2>
+  <form id="login-form">
+    <label for="username">Username:</label>
+    <input type="text" id="username" name="username" required><br><br>
+    
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" required><br><br>
+    
+    <button type="button" id="login-button">Login</button>
+    <p id="login-status"></p>
+  </form>
+</div>
+
+<script>
+  const loginButton = document.getElementById('login-button');
+  const loginStatus = document.getElementById('login-status');
+
+  loginButton.addEventListener('click', function() {
+    const username = document.getElementById('username').value;
+    const password = document.getElementById('password').value;
+
+    if (username === 'yourUsername' && password === 'yourPassword') {
+      loginStatus.textContent = 'Login successful!';
+    } else {
+      loginStatus.textContent = 'Login failed. Please check your username and password.';
+    }
+  });
+</script>
+</body>
+</html>
